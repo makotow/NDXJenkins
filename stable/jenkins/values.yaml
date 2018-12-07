@@ -17,7 +17,7 @@ Master:
   Component: "jenkins-master"
   UseSecurity: true
   AdminUser: admin
-  # AdminPassword: <defaults to random>
+  AdminPassword: netapp123
   Cpu: "200m"
   Memory: "256Mi"
   # Environment variables that get added to the init container (useful for e.g. http_proxy)
@@ -73,7 +73,7 @@ Master:
     - credentials-binding:1.16
     - git:3.9.1
     - blueoceann:1.8.2
-    -ghprb:1.40.0
+    - ghprb:1.40.0
   # Used to approve a list of groovy functions in pipelines used the script-security plugin. Can be viewed under /scriptApproval
   # ScriptApproval:
   #   - "method groovy.json.JsonSlurperClassic parseText java.lang.String"
@@ -146,7 +146,7 @@ Persistence:
   ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
   ##   GKE, AWS & OpenStack)
   ##
-  # StorageClass: "-"
+  StorageClass: "basic"
 
   Annotations: {}
   AccessMode: ReadWriteOnce
